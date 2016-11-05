@@ -84,8 +84,8 @@
     };
     oMask.onmousemove = function (e) {
         e = e || window.event;
-        var left = e.clientX - oDrag.offsetWidth / 2;
-        var top = e.clientY - oDrag.offsetTop / 2;
+        var left = e.clientX - oDrag.offsetWidth/2;
+        var top = e.clientY - oDrag.offsetHeight/2;
         if (left < 0) {
             left = 0;
         }
