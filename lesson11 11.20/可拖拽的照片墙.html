@@ -53,6 +53,17 @@
                 e = e ||window.event;
                 elem.style.left = e.clientX - iDisX +'px';
                 elem.style.top = e.clientY - iDisY + 'px';
+                var collide = [];
+                for (var i = 0 ;i<aImg.length ;i++){
+                    if(aImg[i] == elem){
+                        continue;
+                    }
+                    var isColl = checkCollide(elem,aImg[i]);
+                    if(isColl){
+                        collide.push(aImg[i]);
+                    }
+                    console.log(collide);
+                }
                 return false;
 
             };
@@ -60,6 +71,23 @@
                 document.onmousemove = null;
             };
 
+
+
+            function checkCollide(elem,target) {
+                var elemR = elem.offsetLeft+elem.offsetWidth;
+                var elemL = elem.offsetLeft;
+                var elemB = elem.offsetTop+elem.offsetHeight;
+                var elemT = elem.offsetTop;
+                var targetR = target.offsetLeft+target.offsetWidth;
+                var targetL = target.offsetLeft;
+                var targetB = target.offsetTop+target.offsetHeight;
+                var targetT = target.offsetTop;
+                if(elemR<targetL ||elemB < targetT || elemL>targetR || elemT>targetB){
+                    return false;
+                }else{
+                    return true;
+                }
+            }
         };
 
     }
