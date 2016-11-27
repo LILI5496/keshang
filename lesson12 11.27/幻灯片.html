@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>幻灯片</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+        body{
+            background: #666;
+        }
+        #container {
+            width: 400px;
+            height: 434px;
+            margin: 50px auto;
+        }
+
+        #big-pic {
+            width: 400px;
+            height: 320px;
+            position: relative;
+        }
+        #big-img li{
+            width: 400px;
+            height: 320px;
+            position: absolute;
+            left: 0;
+            top:0;
+        }
+        #left, #right {
+            width: 200px;
+            height: 320px;
+            /*background: #cccccc;*/
+            /*opacity: 0;*/
+            position: absolute;
+            /*z-index: 99999;*/
+
+        }
+        #left{
+            left: 0;
+        }
+        #right{
+            right: 0;
+        }
+        #left-btn,#right-btn{
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 130px;
+            z-index: 99998;
+        }
+        #left-btn{
+            background: url("img/btn.gif");
+            left: 0;
+        }
+        #right-btn{
+            background: url("img/btn.gif") 0 bottom;
+            right: 0;
+        }
+        #text{
+            width: 400px;
+            height: 30px;
+            position: absolute;
+            bottom: 0;
+            background: #000;
+            color: #ffffff;
+            line-height: 30px;
+            z-index: 99998;
+            opacity: 0.6;
+
+        }
+        #text-left{
+            margin-left:10px;
+            float: left;
+
+        }
+        #text-right{
+            float: right;
+            margin-right: 10px;
+        }
+        #small-pic{
+            width: 400px;
+            height: 114px;
+            position: absolute;
+            background: #999;
+            overflow: hidden;
+
+
+        }
+        #small-img{
+            width: 780px;
+
+        }
+        #small-pic li{
+            float: left;
+            margin: 10px 0 10px 10px;
+            opacity: 0.6;
+
+
+        }
+        #small-img img{
+            width: 120px;
+            height: 94px;
+
+        }
+    </style>
+
+</head>
+<body>
+<div id="container">
+    <div id="big-pic">
+        <ul id="big-img">
+            <li style="z-index: 1"><img src="img/1.jpg" alt=""></li>
+            <li><img src="img/2.jpg"></li>
+            <li><img src="img/3.jpg"></li>
+            <li><img src="img/4.jpg"></li>
+            <li><img src="img/5.jpg"></li>
+            <li ><img src="img/6.jpg" ></li>
+        </ul>
+        <div id="left">
+            <span id="left-btn">
+
+                </span>
+        </div>
+        <div id="right">
+            <span id="right-btn">
+
+                </span>
+        </div>
+        <div id="text">
+            <span id="text-left">11111111</span>
+            <div id="text-right">
+                <span>1</span>/ <span>6</span>
+            </div>
+        </div>
+
+    </div>
+    <div id="small-pic">
+        <ul id="small-img">
+            <li style="opacity: 1"><img src="img/1.jpg "  alt=""></li>
+            <li><img src="img/2.jpg"></li>
+            <li><img src="img/3.jpg"></li>
+            <li><img src="img/4.jpg"></li>
+            <li><img src="img/5.jpg"></li>
+            <li><img src="img/6.jpg"></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
