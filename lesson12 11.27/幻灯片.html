@@ -12,9 +12,11 @@
         ul, ol {
             list-style: none;
         }
-        body{
+
+        body {
             background: #666;
         }
+
         #container {
             width: 400px;
             height: 434px;
@@ -26,44 +28,53 @@
             height: 320px;
             position: relative;
         }
-        #big-img li{
+
+        #big-img li {
             width: 400px;
             height: 320px;
             position: absolute;
+            overflow: hidden;
             left: 0;
-            top:0;
+            top: 0;
         }
+
         #left, #right {
             width: 200px;
             height: 320px;
             /*background: #cccccc;*/
-            /*opacity: 0;*/
+            opacity: 0;
             position: absolute;
-            /*z-index: 99999;*/
+            z-index: 99999;
 
         }
-        #left{
+
+        #left {
             left: 0;
         }
-        #right{
+
+        #right {
             right: 0;
         }
-        #left-btn,#right-btn{
+
+        #left-btn, #right-btn {
             width: 60px;
             height: 60px;
             position: absolute;
             top: 130px;
             z-index: 99998;
         }
-        #left-btn{
+
+        #left-btn {
             background: url("img/btn.gif");
             left: 0;
         }
-        #right-btn{
+
+        #right-btn {
             background: url("img/btn.gif") 0 bottom;
             right: 0;
         }
-        #text{
+
+        #text {
             width: 400px;
             height: 30px;
             position: absolute;
@@ -75,36 +86,43 @@
             opacity: 0.6;
 
         }
-        #text-left{
-            margin-left:10px;
+
+        #text-left {
+            margin-left: 10px;
             float: left;
 
         }
-        #text-right{
+
+        #text-right {
             float: right;
             margin-right: 10px;
         }
-        #small-pic{
-            width: 400px;
-            height: 114px;
-            position: absolute;
-            background: #999;
-            overflow: hidden;
 
+        /*#small-pic {*/
+            /*width: 400px;*/
+            /*height: 114px;*/
+            /*position: absolute;*/
+            /*background: #999;*/
+            /*overflow: hidden;*/
 
+        /*}*/
+
+        #small-pic {
+            width: 780px;
+            position: relative;
         }
         #small-img{
-            width: 780px;
-
+            position: absolute;
+            left:0;
         }
-        #small-pic li{
+        #small-pic li {
             float: left;
             margin: 10px 0 10px 10px;
             opacity: 0.6;
 
-
         }
-        #small-img img{
+
+        #small-img img {
             width: 120px;
             height: 94px;
 
@@ -121,7 +139,7 @@
             <li><img src="img/3.jpg"></li>
             <li><img src="img/4.jpg"></li>
             <li><img src="img/5.jpg"></li>
-            <li ><img src="img/6.jpg" ></li>
+            <li><img src="img/6.jpg"></li>
         </ul>
         <div id="left">
             <span id="left-btn">
@@ -136,14 +154,14 @@
         <div id="text">
             <span id="text-left">11111111</span>
             <div id="text-right">
-                <span>1</span>/ <span>6</span>
+                <span id="num">1</span>/ <span>6</span>
             </div>
         </div>
 
     </div>
     <div id="small-pic">
         <ul id="small-img">
-            <li style="opacity: 1"><img src="img/1.jpg "  alt=""></li>
+            <li style="opacity: 1"><img src="img/1.jpg " alt=""></li>
             <li><img src="img/2.jpg"></li>
             <li><img src="img/3.jpg"></li>
             <li><img src="img/4.jpg"></li>
@@ -152,5 +170,81 @@
         </ul>
     </div>
 </div>
+<script src="jslib.js"></script>
+<script>
+    var oLeft = document.getElementById('left');
+    var oRight = document.getElementById('right');
+    var oLeftBtn = document.getElementById('left-btn');
+    var oRightBtn = document.getElementById('right-btn');
+    var oSmallImg = document.getElementById('small-img');
+    var oBigImg = document.getElementById('big-img');
+    var aSmallImg = oSmallImg.getElementsByTagName('li');
+    var aBigImg = oBigImg.getElementsByTagName('li');
+    var oNum = document.getElementById('num');
+    var index = 0;
+    var zIndex = 1;
+    oLeft.onmouseover = oRight.onmouseover = function () {
+        animate(this, {opacity: 100});
+    };
+    oLeft.onmouseout = oRight.onmouseout = function () {
+        animate(this, {opacity: 0});
+    };
+    oLeftBtn.onclick = oRightBtn.onclick = function () {
+        if (this == oLeftBtn) {
+            index--;
+            if (index == -1) {
+                index = aBigImg.length - 1;
+            }
+        }
+        else {
+            index++;
+            if (index == aBigImg.length) {
+                index = 0;
+            }
+        }
+
+        changeImg(index);
+    };
+    for(var i = 0 ;i <aSmallImg.length;i++){
+        aSmallImg[i].index = i;
+        aSmallImg[i].onmouseover = function () {
+            this.style.opacity = 1;
+        };
+        aSmallImg[i].onmouseout = function () {
+
+//            if(this.index != index){
+                this.style.opacity = 0.6;
+//            }
+        };
+        aSmallImg[i].onclick = function () {
+//            alert(1);
+            index = this.index;
+            if(index == 0){
+                animate(oSmallImg,{left:0})
+            }else if(index == aSmallImg.length -1 ) {
+                animate(oSmallImg, {
+                    left: -(index - 2) * (aSmallImg[0].offsetWidth + 10)
+                })
+            }else{
+                animate(oSmallImg,{
+                    left:-(index - 1)*(aSmallImg[0].offsetWidth + 10)
+                })
+                console.log(oSmallImg.left);
+            }
+        }
+
+
+    }
+    function changeImg(index) {
+        aBigImg[index].style.zIndex = zIndex++;
+        aBigImg[index].style.height = 0;
+        animate(aBigImg[index],{height:320});
+        oNum.innerHTML = index + 1;
+
+
+    }
+
+
+</script>
 </body>
 </html>
