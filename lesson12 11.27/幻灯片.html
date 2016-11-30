@@ -99,19 +99,21 @@
         }
 
         /*#small-pic {*/
-            /*width: 400px;*/
-            /*height: 114px;*/
+
             /*position: absolute;*/
-            /*background: #999;*/
-            /*overflow: hidden;*/
 
         /*}*/
 
         #small-pic {
-            width: 780px;
+            width: 400px;
+            height: 114px;
+            background: #999;
+            overflow: hidden;
             position: relative;
         }
         #small-img{
+            width: 780px;
+
             position: absolute;
             left:0;
         }
@@ -134,12 +136,12 @@
 <div id="container">
     <div id="big-pic">
         <ul id="big-img">
-            <li style="z-index: 1"><img src="img/1.jpg" alt=""></li>
-            <li><img src="img/2.jpg"></li>
-            <li><img src="img/3.jpg"></li>
-            <li><img src="img/4.jpg"></li>
-            <li><img src="img/5.jpg"></li>
-            <li><img src="img/6.jpg"></li>
+            <li style="z-index: 1"><img src="img/1.jpg" alt="" title="1111111"></li>
+            <li><img src="img/2.jpg" title="2222222"></li>
+            <li><img src="img/3.jpg" title="3333333"></li>
+            <li><img src="img/4.jpg" title="4444444"></li>
+            <li><img src="img/5.jpg" title="5555555"></li>
+            <li><img src="img/6.jpg" title="6666666"></li>
         </ul>
         <div id="left">
             <span id="left-btn">
@@ -181,8 +183,10 @@
     var aSmallImg = oSmallImg.getElementsByTagName('li');
     var aBigImg = oBigImg.getElementsByTagName('li');
     var oNum = document.getElementById('num');
+    var oTextLeft = document.getElementById('text-left');
     var index = 0;
     var zIndex = 1;
+
     oLeft.onmouseover = oRight.onmouseover = function () {
         animate(this, {opacity: 100});
     };
@@ -212,25 +216,12 @@
         };
         aSmallImg[i].onmouseout = function () {
 
-//            if(this.index != index){
                 this.style.opacity = 0.6;
-//            }
         };
         aSmallImg[i].onclick = function () {
 //            alert(1);
-            index = this.index;
-            if(index == 0){
-                animate(oSmallImg,{left:0})
-            }else if(index == aSmallImg.length -1 ) {
-                animate(oSmallImg, {
-                    left: -(index - 2) * (aSmallImg[0].offsetWidth + 10)
-                })
-            }else{
-                animate(oSmallImg,{
-                    left:-(index - 1)*(aSmallImg[0].offsetWidth + 10)
-                });
-                console.log(oSmallImg.left);
-            }
+//            index = this.index;
+            changeImg(this.index);
         }
 
 
@@ -240,8 +231,36 @@
         aBigImg[index].style.height = 0;
         animate(aBigImg[index],{height:320});
         oNum.innerHTML = index + 1;
+        oTextLeft.innerHTML = aBigImg[index].getElementsByTagName('img')[0].title;
+        for(var i = 0 ;i <aSmallImg.length;i++) {
+            aSmallImg[i] .style.opacity = 0.6;
+        }
+        aSmallImg[index].style.opacity = 1;
+            if(index == 0){
+            animate(oSmallImg,{left:0})
+        }else if(index == aSmallImg.length -1 ) {
+            animate(oSmallImg, {
+                left: -(index - 2) * (aSmallImg[0].offsetWidth + 10)
+            })
+        }else{
+            animate(oSmallImg,{
+                left:-(index - 1)*(aSmallImg[0].offsetWidth + 10)
+            });
+            console.log(oSmallImg.left);
+        }
 
+    }
+    var timer = setInterval(function(){
+        oRightBtn.onclick();
+    },1000);
+    oContainer.onmouseover = function(){
+        clearInterval(timer);
+    };
+    oContainer.onmouseout = function(){
 
+        timer = setInterval(function(){
+            oRightBtn.onclick();
+        },1000);
     }
 
 
