@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>奥运五环</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .circle, .circle::after{
+            width: 200px;
+            height: 200px;
+            border: 10px solid;
+            border-radius: 50%;
+            position: absolute;
+
+        }
+        .circle{
+
+        }
+        .circle::after{
+            content: '';
+            display: block;
+            /*position: relative;*/
+            left: -10px;
+            top:-10px;
+        }
+
+        .blue{
+            color: blue;
+        }
+        .blue::after{
+            z-index:1;
+            border-bottom-color: transparent;
+        }
+        .yellow{
+            color: yellow;
+            left: 230px;
+            top:0;
+        }
+        .yellow::after{
+            z-index: 1;
+            border-left-color: transparent;
+
+        }
+        .red{
+             color: red;
+            left:460px;
+            top:0;
+         }
+        .red::after{
+            z-index: 1;
+            border-left-color: transparent;
+
+        }
+        .green{
+              color: green;
+            top:120px;
+            left: 120px;
+          }
+        .black{
+               border-color: black;
+            top:120px;
+            left: 350px;
+           }
+        .black::after{
+            border-color: black;
+
+            z-index: 1;
+            border-top-color: transparent;
+            border-right-color: transparent;
+
+
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="circle blue"></div>
+<div class="circle yellow"></div>
+<div class="circle red"></div>
+<div class="circle green"></div>
+<div class="circle black"></div>
+
+</body>
+</html>
