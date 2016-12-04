@@ -19,7 +19,7 @@
             height: 200px;
             margin: 100px auto;
             position: relative;
-            /*animation: rotateCute 1.5s linear infinite;*/
+            animation: rotateCute 3s linear infinite;
             -webkit-transform-style: preserve-3d;
 
         }
@@ -31,14 +31,13 @@
                 -webkit-transform: rotateY(-360deg);
             }
         }
+        #container img{
+            width: 200px;
+            height: 200px;
+        }
         .cube{
             background:rgba(255,255,255,0.6);
             position: absolute;
-            width: 200px;
-            height: 200px;
-            font-size: 40px;
-            text-align: center;
-            line-height: 200px;
             border-radius: 10px;
             -webkit-transform:scale3d(1.2,1.2,1.2);
         }
@@ -65,12 +64,12 @@
 </head>
 <body>
 <div id="container">
-    <div class="cube one">1</div>
-    <div class="cube two">2</div>
-    <div class="cube three">3</div>
-    <div class="cube four">4</div>
-    <div class="cube five">5</div>
-    <div class="cube six">6</div>
+    <div class="cube one"><img src="img/1.jpg" alt=""></div>
+    <div class="cube two"><img src="img/1.jpg" alt=""></div>
+    <div class="cube three"><img src="img/1.jpg" alt=""></div>
+    <div class="cube four"><img src="img/1.jpg" alt=""></div>
+    <div class="cube five"><img src="img/1.jpg" alt=""></div>
+    <div class="cube six"><img src="img/1.jpg" alt=""></div>
 </div>
 </body>
 </html>
