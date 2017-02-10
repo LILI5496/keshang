@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul>
+    <li>11111</li>
+    <li>22222</li>
+</ul>
+<button id="btn">click</button>
+<script src="jquery.min.js"></script>
+
+<script>
+    $(function () {
+        $('ul').on('click','li',function () {
+            alert($(this).html());
+        });
+        $('#btn').on('click',function(){
+//            alert(111);
+            $('ul').append('<li>'+Math.random()+'</li>');
+        });
+    });
+
+</script>
+</body>
+</html>
