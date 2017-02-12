@@ -27,22 +27,43 @@
 		//2.缩小操作：与放大操作正好相反
 		//提示：可能出现的潜在问题，如果动画还未完成，再次点击操作按钮会出现什么样的现象？如何解决？
 		var com = $('#comment');
-		$(".bigger").on('click',function(){
-			if(!com.is(':animated')){
-				if(com.height() < 500){
+//		$(".bigger").on('click',function(){
+//			if(!com.is(':animated')){
+//				if(com.height() < 500){
+//					com.animate({
+//						height:"+=50"
+//					},400);
+//				}
+//			}
+//
+//		});
+//		$(".smaller").on('click',function(){
+//			if(!com.is(':animated')) {
+//				if (com.height() > 50) {
+//					com.animate({
+//						height: "-=50"
+//					}, 400);
+//				}
+//			}
+//		})
+
+
+		var com=$('#comment');
+		$('.bigger').on('click',function () {
+			if(com.height()<500){
+				if(!com.is(':animated')){
 					com.animate({
 						height:"+=50"
 					},400);
 				}
 			}
-
-		})
-		$(".smaller").on('click',function(){
-			if(!com.is(':animated')) {
-				if (com.height() > 50) {
+		});
+		$('.smaller').on('click',function () {
+			if(com.height()>50) {
+				if (!com.is(':animated')) {
 					com.animate({
 						height: "-=50"
-					}, 400);
+					}, 400)
 				}
 			}
 		})
