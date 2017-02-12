@@ -8,25 +8,36 @@
 <!--<script src="demo1.js"></script>-->
 <script type="text/javascript">
     $(function(){
-        $('#CheckedAll').on('click',function(){
-            $('[name=items]').prop('checked',true);
+//        $('#CheckedAll').on('click',function(){
+//            $('[name=items]').prop('checked',true);
+//        });
+//
+//        $('#CheckedNo').on('click',function(){
+//            $('[name=items]').prop('checked',false);
+//        });
+//
+//        $('#CheckedRev').on('click',function(){
+//            this
+//            $('[name=items]').each(function(){
+//                //$(this).prop('checked',!$(this).prop('checked'));
+////                $(this).
+//                this.checked = !this.checked;
+//
+//            });
+//        });
+
+        $('#CheckedAll').on('click',function () {
+            $('[name="items"]').prop('checked',true);
         });
-
-        $('#CheckedNo').on('click',function(){
-            $('[name=items]').prop('checked',false);
+        $('#CheckedNo').on('click',function () {
+            $('[name="items"]').prop('checked',false);
         });
-
-        $('#CheckedRev').on('click',function(){
-            this
-            $('[name=items]').each(function(){
-                //$(this).prop('checked',!$(this).prop('checked'));
-//                $(this).
-                this.checked = !this.checked;
-
+        $('#CheckedRev').on('click',function () {
+            $('[name="items"]').each(function (index, elem) {
+                $(elem).prop('checked',!$(elem).prop('checked'));
             });
         });
-
-    })
+    });
 </script>
 </head>
 <body>
