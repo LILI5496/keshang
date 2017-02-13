@@ -26,26 +26,59 @@
         <script>
             $(function(){
 
-                $('.editable').on('click',function(){
+//                $('.editable').on('click',function(){
+//                    if(!$(this).children(':input').size()){
+//                        var $input = $('<input type="text">');
+//                        $input.val($(this).text()).css('border','none');
+////                    $(this).html($input);
+//                        $(this).empty().append($input);
+//                        $input.trigger('select');
+//                        $input.on('keyup',function(e){
+//                            if(e.which==13){
+//                                $(this).parent().html($(this).val());
+//                            }
+//
+//                        })
+//
+//                    }
+//
+//
+//                });
+
+
+
+
+
+
+
+
+
+
+
+                $('.editable').on('click',function () {
                     if(!$(this).children(':input').size()){
-                        var $input = $('<input type="text">');
-                        $input.val($(this).text()).css('border','none');
+                        var $input=$('<input type="text">');
+                        $input.val($(this).text()).css('border','0');
 //                    $(this).html($input);
                         $(this).empty().append($input);
                         $input.trigger('select');
-                        $input.on('keyup',function(e){
+                        $input.on('keyup',function (e) {
                             if(e.which==13){
                                 $(this).parent().html($(this).val());
                             }
-
-                        })
-
+                        });
                     }
 
 
                 });
 
-            })
+
+
+
+
+
+
+            });
 
         </script>
     </head>
