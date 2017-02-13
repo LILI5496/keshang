@@ -13,19 +13,32 @@
 	//�ĵ���������
 	$(function(){
 
-		$('.parent').on('click',function(){
+//		$('.parent').on('click',function(){
+//
+//			var $tr = $(this).siblings('.child_'+$(this).attr('id'));
+//			if($($tr.get(0)).is(":hidden")){
+//				$tr.show();
+//			}else{
+//				$tr.hide();
+//			}
+//
+////			$(this).siblings('.child_'+$(this).attr('id')).toggle();
+//		});
 
-			var $tr = $(this).siblings('.child_'+$(this).attr('id'));
-			if($($tr.get(0)).is(":hidden")){
-				$tr.show();
-			}else{
-				$tr.hide();
-			}
 
+
+
+		$('.parent').on('click',function () {
 //			$(this).siblings('.child_'+$(this).attr('id')).toggle();
+			var $rs=$(this).siblings('.child_'+$(this).attr('id'));
+			if($($rs.get(0)).is(':hidden')){
+				$rs.show();
+			}else {
+				$rs.hide();
+			}
 		});
 
-	})
+	});
 </script>
 </head>
 <body>
