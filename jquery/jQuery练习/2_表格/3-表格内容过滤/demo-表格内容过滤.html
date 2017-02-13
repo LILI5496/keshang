@@ -19,7 +19,7 @@
 	  //      2.先隐藏所有行，然后找到包含指定文本的记录行，再显示它
 	  //注意问题：在某些浏览器中，有这要一个特点，就是刷新网页后，其值会保持不变，这就意味着刷新网页后，文本框中的值未必改变，但是表格中的数据又全出来了
 
-	  $("#filterName").keyup(function(){
+//	  $("#filterName").keyup(function(){
 //		  $("table tbody tr")
 //				  .hide()
 //				  .filter(":contains('"+( $(this).val() )+"')")
@@ -27,11 +27,19 @@
 
 //		  $("table tbody tr:contains("+$(this).val()+")").nextAll().hide();
 
-		  $("table tbody tr").show().not(":contains('"+( $(this).val() )+"')").hide();
+//		  $("table tbody tr").show().not(":contains('"+( $(this).val() )+"')").hide();
+//
+//	  });
+
+
+
+	  $('#filterName').keyup(function () {
+//		 $('table tbody tr').hide().filter(":contains('"+$(this).val()+"')").show();
+		  !$('table tbody tr').show().not(":contains('"+$(this).val()+"')").hide();
 
 	  });
 
-  })
+  });
 </script>
 </head>
 <body>
