@@ -1,0 +1,74 @@
+@font-face {
+    font-family:BebasNeue-webfont ;
+    src:url("../source/BebasNeue-webfont.ttf");
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+ul,ol{
+    list-style: none;
+}
+body{
+    background: url("../img/pattern.gif");
+    font-family: BebasNeue-webfont;
+}
+#header{
+    background-color: red;
+    height: 3px;
+}
+#nav ul li{
+
+}
+#nav ul li a {
+    /*float: left;*/
+    color: white;
+    width: 150px;
+    margin-right: 20px;
+    font-size: 30px;
+    /*background-color: green;*/
+    text-align: center;
+
+}
+#nav ul li a .selected{
+    background: white;
+    color: #000000;
+}
+#nav ul li a:hover{
+    background: white;
+    color: black;
+}
+#list{
+    background: white;
+}
+#list .dom{
+    width: 382px;
+    /*background: blue;*/
+    display: inline-block;
+    text-align: center;
+
+
+    margin: 20px;
+}
+#list .dom p{
+    font-family: "sans-serif";
+    margin-bottom: 5px;
+}
+#list .dom a{
+    background-color: #c0392b;
+    color: white;
+    display: inline-block;
+    width: 170px;
+    height: 40px;
+    font-size:25px;
+    text-align: center;
+    line-height: 40px;
+
+}
+#list .dom a:hover{
+    background:black;
+}
