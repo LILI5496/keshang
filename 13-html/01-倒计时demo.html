@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时demo</title>
+    <style>
+        img{
+            margin: 50px;
+            display: none;
+        }
+        .time{
+            margin: 50px;
+            font-size: 200px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<img src="img/pic.jpg" alt="">
+<div class="time">10</div>
+<script>
+    var oImg=document.getElementsByTagName('img')[0];
+    var oDiv = document.getElementsByClassName('time')[0];
+    alert(oDiv.innerHTML);
+
+    var timer=setInterval(function () {
+        oDiv.innerHTML-=1;
+        if(oDiv.innerHTML==0){
+            clearInterval(timer);
+            oDiv.style.display='none';
+            oImg.style.display='block';
+        }
+    },1000);
+</script>
+</body>
+</html>
