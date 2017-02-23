@@ -25,6 +25,7 @@
     color:#626262;
     margin-top: 50px;
     line-height: 21px;
+    cursor: pointer;
 }
 #nav .wrapper ul li a{
     float: left;
@@ -235,13 +236,15 @@
 #footer .wrapper .p1{
     font-size: 15px;
     color:#e2e7ed;
-    float: left;
-    margin: 1px;
+    /*float: left;*/
+    clear: both;
+    margin: 16px 0;
 }
 #footer .wrapper .p2{
     float: left;
     font-size: 12px;
     color:#e2e7ed;
+    margin: 18px 0;
 }
 #footer .wrapper .footer-img{
     position: absolute;
