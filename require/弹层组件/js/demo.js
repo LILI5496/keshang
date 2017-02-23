@@ -3,7 +3,7 @@
  */
 require(['jquery'],function ($) {
     $('#btn').on('click',function () {
-       alert(111);
+
     });
 
 
