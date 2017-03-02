@@ -7,7 +7,7 @@
 }
 #nav .wrapper{
     height: 120px;
-    /*line-height: 120px;*/
+
 }
 #nav .wrapper a.logo{
     width: 189px;
@@ -236,7 +236,6 @@
 #footer .wrapper .p1{
     font-size: 15px;
     color:#e2e7ed;
-    /*float: left;*/
     clear: both;
     margin: 16px 0;
 }
