@@ -5,42 +5,35 @@
     <title>Title</title>
 </head>
 <body>
-<div id="app">
-    <input type="text" v-model="msg">
-    <div>{{msg}}</div>
-</div>
+    <div id="app">
+        是否需要额外付费设施<input type="checkbox" @click="getFacility">
+        <ul>
+            <li>111111 <input type="checkbox" v-model="facility"></li>
+        </ul>
+        订单费用信息
+        <ul>
+            <li></li>
+        </ul>
+        总金额
+    </div>
 
 
-</body>
-<script src="vue.js"></script>
+
+
 <script>
     var vm = new Vue({
-        el:"#app",
+        el:'#app',
         data:{
-            firstName:'li',
-            lastName:'li',
-            fullName:'lili'
+
         },
-        computed:{
-            fullName:function () {
-                return this.firstName+" "+this.lastName;
-            },
-            fullName:{
-                get:function () {
-                    return this.firstName+" "+this.lastName;
-                },
-                set:function () {
-                    var arr=val.split(" ");
-                    this.firstName = arr[0];
-                    this.firstName = arr[1];
-                }
+        methods:{
+            getFacility:function () {
+               if(event.target.checked){
+
+               }
             }
-        },
-        watch:{
-
         }
-    });
-    console.log(vm.msg);
-
+    })
 </script>
+</body>
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="text">
+        <select name="" id="">
+            <option value="aa">111</option>
+            <option value="bb">222</option>
+            <option value="cc">333</option>
+        </select>
+        <input type="checkbox" v-model="text">
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                text:'test',
+                sele:'',
+                check:true
+            }
+        })
+    </script>
+</body>
+</html>

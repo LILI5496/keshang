@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="id">
+        <input type="text" v-model="newText" @keyup.enter="add" placeholder="shuru">
+        <ul>
+            <li v-for="(val,index) in arr">
+                {{val}}
+                <button @click="del(index)">Del</button>
+            </li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                newText:'',
+                arr:{
+
+                }
+
+            },
+            methods:{
+                add:function () {
+                    this.arr.push(this.newText);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
